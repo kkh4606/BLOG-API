@@ -21,7 +21,7 @@ async def get_posts(
     posts = (
         db.query(
             models.Posts,
-            func.count(models.Vote.post_id).label("vote"),
+            func.count(models.Vote.post_id).label("like"),
             func.count(models.Comment.id).label("comment"),
         )
         .outerjoin(models.Vote, models.Vote.post_id == models.Posts.id)
@@ -33,8 +33,8 @@ async def get_posts(
     )
 
     return [
-        {"Post": post, "vote": vote, "comment": comment}
-        for post, vote, comment in posts
+        {"Post": post, "like": like, "comment": comment}
+        for post, like, comment in posts
     ]
 
 

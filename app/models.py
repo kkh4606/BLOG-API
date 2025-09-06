@@ -10,6 +10,7 @@ class Users(Base):
     username = Column(String, nullable=False)
     email = Column(String, unique=True, nullable=False)
     password = Column(String, nullable=False)
+    phone_number = Column(String, nullable=False)
     created_at = Column(TIMESTAMP(timezone=True), server_default=text("NOW()"))
 
     post = relationship("Posts", back_populates="owner")

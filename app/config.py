@@ -5,6 +5,7 @@ class Settings(BaseSettings):
     database_user: str
     database_password: str
     database_host: str
+    database_port: int
     database_name: str
 
     secret_key: str

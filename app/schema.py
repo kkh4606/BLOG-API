@@ -8,6 +8,7 @@ class User(BaseModel):
     username: str
     email: EmailStr
     password: str
+    phone_number: str
 
 
 class UserCreate(User):
@@ -23,6 +24,7 @@ class UserOut(BaseModel):
     id: int
     username: str
     email: str
+    phone_number: str
     created_at: datetime
     token: Token
 
@@ -31,6 +33,7 @@ class UserPostOut(BaseModel):
     id: int
     username: str
     email: str
+    phone_number: str
     created_at: datetime
 
 
@@ -79,11 +82,11 @@ class Post(PostBase):
 
 class PostOut(BaseModel):
     Post: Post
-    vote: int
+    like: int
     comment: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class Vote(BaseModel):
