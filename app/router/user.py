@@ -33,7 +33,6 @@ async def create_user(user: schema.UserCreate, db: Session = Depends(database.ge
 
     return {
         "id": new_user.id,
-        "username": new_user.username,
         "email": new_user.email,
         "created_at": new_user.created_at,
         "token": {"access_token": access_token, "token_type": "bearer"},
