@@ -29,7 +29,6 @@ class UserOut(BaseModel):
 
 class UserPostOut(BaseModel):
     id: int
-    username: str
     email: str
     phone_number: str
     created_at: datetime
