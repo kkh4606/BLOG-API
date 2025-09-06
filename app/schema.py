@@ -5,7 +5,6 @@ from pydantic.types import conint
 
 
 class User(BaseModel):
-    username: str
     email: EmailStr
     password: str
     phone_number: str
@@ -22,7 +21,6 @@ class Token(BaseModel):
 
 class UserOut(BaseModel):
     id: int
-    username: str
     email: str
     phone_number: str
     created_at: datetime
